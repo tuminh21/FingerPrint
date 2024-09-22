@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        height: 100vh; /* Chiều cao toàn bộ màn hình */
+      }
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px; /* Đặt chiều rộng của form */
+      }
+      input {
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 100%; /* Đảm bảo các trường nhập chiếm toàn bộ chiều rộng của form */
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%; /* Đảm bảo nút chiếm toàn bộ chiều rộng của form */
+      }
+      h1 {
+        text-align: center; /* Căn giữa tiêu đề */
+        margin-bottom: 0px; /* Khoảng cách dưới tiêu đề */
+      }
+      a {
+        text-align: center; /* Căn giữa tiêu đề */
+        margin-bottom: 400px; /* Khoảng cách dưới tiêu đề */
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      "
+    >
+      <h1>Login</h1>
+      <div style="display: flex; justify-content: center">
+        <form method="POST">
+          {{ form.hidden_tag() }} {{ form.username.label }} {{
+          form.username(size=32) }}<br />
+          {{ form.password.label }} {{ form.password(size=32) }}<br />
+          {{ form.submit() }}
+        </form>
+      </div>
+
+      <a href="{{ url_for('register') }}"
+        >Don't have an account? Register here.</a
+      >
+    </div>
+  </body>
+</html>

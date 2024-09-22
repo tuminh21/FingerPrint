@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data List</title>
+</head>
+<body>
+    <h1>Data List</h1>
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Updated At</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.data }}</td>
+            <td>{{ item.updatedAt.strftime('%Y-%m-%d %H:%M:%S') }}</td>  <!-- Định dạng hiển thị -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
